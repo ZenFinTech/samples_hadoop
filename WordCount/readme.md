@@ -11,7 +11,7 @@ javac程序应该是com.sun.tools.javac下的class文件打包而成的可执行
 
 如果用javac命令的话，还需要针对其另外配置   
 在/etc/profie中加入以下路径     
-      export CLASSPATH="${HADOOP_HOME}/share/hadoop/common/hadoop-common- 2.7.7.jar:${HADOOP_HOME}/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.7.jar:${HADOOP_HOME}/share/hadoop/common/lib/commons-cli-1.2.jar
+export CLASSPATH="${HADOOP_HOME}/share/hadoop/common/hadoop-common- 2.7.7.jar:${HADOOP_HOME}/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.7.jar:${HADOOP_HOME}/share/hadoop/common/lib/commons-cli-1.2.jar
       
       
  
