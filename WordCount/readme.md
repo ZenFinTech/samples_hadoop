@@ -1,3 +1,4 @@
+#### compile source code
 $ bin/hadoop com.sun.tools.javac.Main WordCount.java      
 $ jar cf wc.jar WordCount*.class      
 
@@ -13,8 +14,27 @@ javac程序应该是com.sun.tools.javac下的class文件打包而成的可执行
 在/etc/profie中加入以下路径     
 export CLASSPATH="${HADOOP_HOME}/share/hadoop/common/hadoop-common- 2.7.7.jar:${HADOOP_HOME}/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.7.jar:${HADOOP_HOME}/share/hadoop/common/lib/commons-cli-1.2.jar
       
-      
+#### about job
+// Create a new Job
+     Job job = Job.getInstance();
+     job.setJarByClass(MyJob.class);
+     
+     // Specify various job-specific parameters     
+     job.setJobName("myjob");
+     
+     job.setInputPath(new Path("in"));
+     job.setOutputPath(new Path("out"));
+     
+     job.setMapperClass(MyJob.MyMapper.class);
+     job.setReducerClass(MyJob.MyReducer.class);
+
+     // Submit the job, then poll for progress until the job is complete
+     job.waitForCompletion(true);
+
+       
  
 #### ref url
 https://blog.csdn.net/helloworld0906/article/details/89455806      
 https://blog.csdn.net/beijihukk/article/details/53810939    
+
+https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/mapreduce/Job.html
