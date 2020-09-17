@@ -15,7 +15,7 @@ javac程序应该是com.sun.tools.javac下的class文件打包而成的可执行
 export CLASSPATH="${HADOOP_HOME}/share/hadoop/common/hadoop-common- 2.7.7.jar:${HADOOP_HOME}/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.7.jar:${HADOOP_HOME}/share/hadoop/common/lib/commons-cli-1.2.jar
       
 #### about job
-// Create a new Job
+     // Create a new Job
      Job job = Job.getInstance();
      job.setJarByClass(MyJob.class);
      
